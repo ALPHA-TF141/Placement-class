@@ -1,0 +1,17 @@
+<input type="number" id="basic_salary">
+<button onclick="calculateSalary()">Calculate Salary</button>
+<p>Net Salary: <span id="net_salary"></span></p>
+<script>
+    function calculateSalary() {
+        let salary = parseFloat(document.getElementById('basic_salary').value);
+        
+        if (isNaN(salary)) {
+            alert("Please enter a valid number.");
+            return;
+        }
+        let tax = salary * 0.10;  // 10% tax
+        let net = salary - tax;
+        
+        document.getElementById('net_salary').textContent = net.toFixed(2);
+    }
+</script>

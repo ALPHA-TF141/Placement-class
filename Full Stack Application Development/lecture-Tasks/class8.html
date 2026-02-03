@@ -1,0 +1,35 @@
+<input type="text" id="user-input">
+<button onclick="add()">ADD</button>
+<ul></ul>
+<script>
+    let items = [];
+
+    function add() {
+        const input = document.getElementById('user-input');
+        if (input.value.trim()) {
+            items.push(input.value);
+            showItems();
+        }
+        input.value = '';
+    }
+
+    function showItems() {
+        const list = document.getElementsByTagName('ul')[0];
+        list.innerHTML = '';
+
+        for (let i = 0; i < items.length; i++) {
+            const li = document.createElement('li');
+            li.textContent = items[i];
+
+            let deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Delete';
+            deleteButton.onclick = function() {
+                items.splice(i, 1);
+                showItems();
+            };
+
+            li.appendChild(deleteButton);
+            list.appendChild(li);
+        }
+    }
+</script>

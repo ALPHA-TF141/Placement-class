@@ -1,0 +1,23 @@
+<input type="date" id="last_login">
+<button onclick="checkActivity()">Check Activity</button>
+<p>Activity: <span id="status"></span></p>
+<script>
+    function checkActivity() {
+        let lastLogin = document.getElementById('last_login').value;
+        
+        if (!lastLogin) {
+            alert("Please enter your last login date.");
+            return;
+        }
+        
+        const today = new Date();
+        const loginDate = new Date(lastLogin);
+        const diffInDays = Math.abs(today - loginDate) / (1000 * 60 * 60 * 24);
+        
+        if (diffInDays <= 30) {
+            document.getElementById('status').textContent = "Active";
+        } else {
+            document.getElementById('status').textContent = "Inactive";
+        }
+    }
+</script>

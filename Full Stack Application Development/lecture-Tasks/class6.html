@@ -1,0 +1,23 @@
+<h1 id="one">One</h1>
+<h1 id="two">Two</h1>
+<h1 id="three">Three</h1>
+<h1 id="four">Four</h1>
+<h1 id="five">Five</h1>
+<h1 id="six">Six</h1>
+<script>
+    function hideElement(elementId) {
+        var element = document.getElementById(elementId);
+        if (element.style.display == "none") {
+            element.style.display = "";
+        } else {
+            element.style.display = "none";
+        }
+    }
+    document.getElementById("one").addEventListener('click', function() { hideElement('one'); });
+    document.getElementById("two").addEventListener('click', function() { hideElement('two'); });
+    document.getElementById("three").addEventListener('click', function() { hideElement('three'); });
+    document.getElementById("four").addEventListener('click', function() { hideElement('four'); });
+    document.getElementById("five").addEventListener('click', function() { hideElement('five'); });
+    document.getElementById("six").addEventListener('click', function() { hideElement('six'); });
+</script>
+

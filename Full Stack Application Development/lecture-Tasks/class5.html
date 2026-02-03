@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Pointer Linked List Problem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #333;
+            color: white;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Two Pointer Linked List Problem - Solution</h1>
+    </header>
+
+    <main>
+        <p>This problem asks you to reverse a linked list in-place using only two pointers.</p>
+
+        <pre>
+            Given: Head = [1, 2, 3, 4]
+            Return: [4, 3, 2, 1]
+
+            Constraints:
+                - No extra space allowed
+                - Only modify the given nodes
+                - Do not return a new list
+
+            Example:
+                Input: head = [1, 2, 3, 4]
+                Output: head = [4, 3, 2, 1]
+        </pre>
+
+        <h2>Implementation:</h2>
+        <p>We use two pointers: <code>prev</code> and <code>curr</code>.</p>
+        <ol>
+            <li><code>prev</code> starts at <code>null</code> and moves forward.</li>
+            <li><code>curr</code> starts at the head of the list.</li>
+            <li>For each node, we:
+                - Store the next node in a temporary variable.
+                - Set the current node's <code>next</code> pointer to point to <code>prev</code>.
+                - Move <code>prev</code> and <code>curr</code> one step forward.</li>
+        </ol>
+
+        <h2>Complexity:</h2>
+        <p><strong>O(n)</strong>: One pass through the list.</p>
+        <p><strong>O(1)</strong>: Only constant extra space is used.</p>
+
+        <h3>Explanation</h3>
+        <pre>
+            [1, 2, 3, 4]
+              p   c
+           prev = null
+           curr = 1
+
+           1's next points to prev (now null)
+           prev = 1; curr = 2
+
+           2's next points to prev (now 1)
+           prev = 2; curr = 3
+
+           3's next points to prev (now 2)
+           prev = 3; curr = 4
+        </pre>
+
+        <h2>Example</h2>
+        <p><code>head = [1, 2, 3, 4]</code></p>
+        <pre>
+            i = 0
+             p   c
+          prev = null
+          curr = 1
+
+           1's next points to prev (now null)
+           prev = 1; curr = 2
+
+           2's next points to prev (now 1)
+           prev = 2; curr = 3
+
+           3's next points to prev (now 2)
+           prev = 3; curr = 4
+        </pre>
+
+        <h2>Code:</h2>
+        <pre>
+            // Node definition
+            function ListNode(val, next) {
+                this.val = val === undefined ? 0 : val;
+                this.next = next === undefined ? null : next;
+            }
+
+            // Function to reverse the linked list in-place
+            function reverse(head) {
+                let prev = null;  // Pointer to track the previous node
+                let curr = head;   // Pointer to traverse the list
+
+                while (curr !== null) {
+                    // Store the next node
+                    const temp = curr.next;
+
+                    // Reverse the current node's pointer
+                    curr.next = prev;
+
+                    // Move pointers one step forward
+                    prev = curr;
+                    curr = temp;
+                }
+
+                return prev;  // New head of the reversed list
+            }
+        </pre>
+
+        <h2>Run It:</h2>
+        <p>Copy and paste this code into an HTML file (e.g., <code>two_pointer_list.html</code>) and open it in a browser.</p>
+
+        <h3>Result:</h3>
+        <p>The output should show the linked list reversed: [4, 3, 2, 1].</p>
+    </main>
+
+    <footer>
+        &copy; 2023 College Website. All rights reserved.
+    </footer>
+</body>
+</html>
