@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vel Tech Unviversity</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0059b3);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #222;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        nav a:hover {
+            background: #575757;
+        }
+
+        .hero {
+            padding: 40px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .hero h2 {
+            color: #003366;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 280px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #003366;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Inline CSS -->
+        <h1 style="letter-spacing: 2px;">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology </h1>
+        <p style="font-style: italic;">Affiliated to Vel Tech Group of Colleges | NAAC Accredited</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <!-- Link to next page: student registration form -->
+        <a href="register.html">Student Registration</a>
+    </nav>
+
+    <section class="hero" id="about">
+        <h2>Welcome to Vel Tech University</h2>
+        <p>Vel Tech Unviversity offers high quality education in Engineering, Technology and Management.</p>
+    </section>
+
+    <section class="sections">
+        <div class="card" id="courses">
+            <h3>Courses Offered</h3>
+            <ul>
+                <li>B.Tech Computer Science</li>
+                <li>B.Tech Electronics</li>
+                <li>B.Tech Mechanical</li>
+                <li>MBA</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Facilities</h3>
+            <ul>
+                <li>Modern Labs</li>
+                <li>Digital Library</li>
+                <li>Hostel & Transport</li>
+                <li>Placement Cell</li>
+            </ul>
+        </div>
+
+        <div class="card" id="contact">
+            <h3>Contact Us</h3>
+            <p>Vel Tech Unviversity, Chennai</p>
+            <p>Email: info@veltechuniversity.edu</p>
+            <p>Phone: +91-98765 43210</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Vel Tech Unviversity. All Rights Reserved.
+    </footer>
+</body>
+</html>

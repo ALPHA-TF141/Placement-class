@@ -1,0 +1,38 @@
+/* External CSS example */
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card h3 {
+    color: #0059b3;
+    text-transform: uppercase;
+}
+
+/* class selector */
+.hero p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* id selector */
+#courses ul li {
+    list-style-type: square;
+}
+
+/* pseudo-class */
+a:hover {
+    color: #ffcc00;
+}
+
+/* media query */
+@media (max-width: 600px) {
+    .sections {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
