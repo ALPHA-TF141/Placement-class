@@ -16,20 +16,34 @@ export default function LoginPage() {
   const [error, setError] = useState("")
   const router = useRouter()
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     setError("")
 
-    // Simulated login validation
-    setTimeout(() => {
-      if (username === "admin" && password === "admin") {
-        router.push("/dashboard")
-      } else {
-        setError("Invalid credentials. Please use admin/admin for demo.")
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setError(data.message)
         setIsLoading(false)
+        return
       }
-    }, 1000)
+
+      router.push("/admin/dashboard")
+
+    } catch (err) {
+      setError("Server error. Try again.")
+      setIsLoading(false)
+    }
   }
 
   return (
