@@ -1,0 +1,11 @@
+/* Reset + base styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
